@@ -2,34 +2,32 @@
 import "bootstrap";
 import "./style.css";
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+const who = ["The dog", "My grandma", "His turtle", "My bird"];
+const action = ["ate", "peed", "crushed", "broke"];
+const what = ["my homework", "the keys", "the car"];
+const when = [
+  "before the class",
+  "right on time",
+  "when I finished",
+  "during my lunch",
+  "while I was praying"
+];
 
 window.onload = function() {
   //write your code here
-  console.log("Hello Rigo from the console!");
+  const randomSentence = () => {
+    // get a random index from an array using math random
+    const randomWho = who[Math.floor(Math.random() * who.length)];
+    const randomAction = action[Math.floor(Math.random() * action.length)];
+    const randomWhat = what[Math.floor(Math.random() * what.length)];
+    const randomWhen = when[Math.floor(Math.random() * when.length)];
 
-  const who = ["The dog", "My grandma", "His turtle", "My bird"];
-  const action = ["ate", "peed", "crushed", "broke"];
-  const what = ["my homework", "the keys", "the car"];
-  const when = [
-    "before the class",
-    "right on time",
-    "when I finished",
-    "during my lunch",
-    "while I was praying"
-  ];
-
-  const type1 = function() {
-    const getRandomInt = Math.floor(Math.random() * who.length);
-    const randomWho = who[getRandomInt];
-    // const randomAction = action[getRandomInt];
-    // const randomWhat = who[getRandomInt];
-    // const randomWhen = who[getRandomInt];
-    console.log(randomWho);
-    return `${randomWho}`;
+    //combine all random variables into a sentence
+    const newSentence = `${randomWho} ${randomAction} ${randomWhat} ${randomWhen}.`;
+    return newSentence;
   };
-  type1();
+  randomSentence();
 
-  document.getElementById("excuse").innerHTML = type1;
+  console.log(randomSentence);
+  document.getElementById("excuse").innerHTML = randomSentence;
 };
