@@ -26,8 +26,7 @@ window.onload = function() {
     const newSentence = `${randomWho} ${randomAction} ${randomWhat} ${randomWhen}.`;
     return newSentence;
   };
-  randomSentence();
 
   console.log(randomSentence);
-  document.getElementById("excuse").innerHTML = randomSentence;
+  document.getElementById("excuse").innerHTML = randomSentence();
 };
